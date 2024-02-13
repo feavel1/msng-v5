@@ -4,14 +4,16 @@
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
-		"build": "vite build",
+		"build": "paraglide-js compile --project ./project.inlang && vite build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"test": "vitest",
-		"lint": "eslint ."
+		"lint": "eslint .",
+		"postinstall": "paraglide-js compile --project ./project.inlang"
 	},
 	"devDependencies": {
+		"@inlang/paraglide-js": "1.2.5",
 		"@sveltejs/adapter-auto": "^3.1.1",
 		"@sveltejs/adapter-cloudflare": "^4.1.0",
 		"@sveltejs/kit": "^2.5.0",
@@ -21,7 +23,7 @@
 		"@typescript-eslint/parser": "^6.0.0",
 		"eslint": "^8.56.0",
 		"eslint-plugin-svelte": "^2.36.0-next.4",
-		"svelte": "^5.0.0-next.50",
+		"svelte": "^5.0.0-next.53",
 		"svelte-check": "^3.6.3",
 		"tslib": "^2.4.1",
 		"typescript": "^5.3.3",
@@ -29,9 +31,8 @@
 		"vitest": "^1.2.2"
 	},
 	"type": "module",
+	"packageManager": "yarn@1.22.19",
 	"dependencies": {
-		"@svelteuidev/composables": "^0.15.4",
-		"@svelteuidev/core": "^0.15.4",
-		"sveltekit-i18n": "^2.4.2"
+		"@inlang/paraglide-js-adapter-sveltekit": "^0.4.0"
 	}
 }
