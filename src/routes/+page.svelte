@@ -3,4 +3,4 @@
 </script>
 
 <h1>{ m.hello_world() }</h1>
-<p>{ m.greeting({ name: 'Anton' }) }</p>
+<p>{ m.greeting({ name: 'Mike' }) }</p>
